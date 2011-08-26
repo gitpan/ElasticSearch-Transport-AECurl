@@ -1,0 +1,62 @@
+{
+   "abstract" : "AnyEvent::Multi::Curl (libcurl) backend for ElasticSearch",
+   "author" : [
+      "Clinton Gormley <drtech@cpan.org>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Dist::Zilla version 4.300000, CPAN::Meta::Converter version 2.110930",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "ElasticSearch-Transport-AECurl",
+   "prereqs" : {
+      "build" : {
+         "requires" : {
+            "Module::Build" : "0.3601"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "Module::Build" : "0.3601"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "AnyEvent::Curl::Multi" : 0,
+            "ElasticSearch" : "0.43",
+            "ElasticSearch::Transport::AEHTTP" : 0,
+            "ElasticSearch::Util" : 0,
+            "Encode" : 0,
+            "Guard" : 0,
+            "HTTP::Request" : 0,
+            "Scalar::Util" : 0,
+            "base" : 0,
+            "strict" : 0,
+            "warnings" : 0
+         }
+      },
+      "test" : {
+         "requires" : {
+            "Test::More" : 0
+         }
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/clintongormley/ElasticSearch-AECurl/issues"
+      },
+      "homepage" : "https://metacpan.org/module/ElasticSearch",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/clintongormley/ElasticSearch-AECurl.git",
+         "web" : "https://github.com/clintongormley/ElasticSearch-AECurl"
+      }
+   },
+   "version" : "0.01"
+}
+
