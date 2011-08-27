@@ -3,16 +3,17 @@ package ElasticSearch::Transport::AECurl;
 use strict;
 use warnings;
 
-use base 'ElasticSearch::Transport::AEHTTP';
+use ElasticSearch 0.44                    ();
+use ElasticSearch::Transport::AEHTTP 0.02 ();
+use parent 'ElasticSearch::Transport::AEHTTP';
 use AnyEvent::Curl::Multi();
 use HTTP::Request();
 use Encode qw(decode_utf8 encode_utf8);
-use ElasticSearch 0.43 ();
 use ElasticSearch::Util qw(build_error);
 use Scalar::Util qw(weaken);
 use Guard qw(guard);
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 #===================================
 sub init {
@@ -82,7 +83,10 @@ sub _send_request {
 
     my $client = $self->client;
     my $handle = $client->request($request);
-
+    $handle->{easy_h}->setopt(
+        WWW::Curl::Easy::CURLOPT_ENCODING,
+        $self->deflate ? 'deflate' : undef
+    );
     my $cv = bless $handle->cv, 'ElasticSearch::Transport::AnyEvent::CondVar';
     $cv->cb($request_cb);
 
@@ -164,7 +168,7 @@ ElasticSearch::Transport::AECurl - AnyEvent::Multi::Curl (libcurl) backend for E
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 

@@ -27,14 +27,14 @@
       "runtime" : {
          "requires" : {
             "AnyEvent::Curl::Multi" : 0,
-            "ElasticSearch" : "0.43",
-            "ElasticSearch::Transport::AEHTTP" : 0,
+            "ElasticSearch" : "0.44",
+            "ElasticSearch::Transport::AEHTTP" : "0.02",
             "ElasticSearch::Util" : 0,
             "Encode" : 0,
             "Guard" : 0,
             "HTTP::Request" : 0,
             "Scalar::Util" : 0,
-            "base" : 0,
+            "parent" : 0,
             "strict" : 0,
             "warnings" : 0
          }
@@ -57,6 +57,6 @@
          "web" : "https://github.com/clintongormley/ElasticSearch-AECurl"
       }
    },
-   "version" : "0.01"
+   "version" : "0.02"
 }
 
