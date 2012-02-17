@@ -14,21 +14,16 @@
    },
    "name" : "ElasticSearch-Transport-AECurl",
    "prereqs" : {
-      "build" : {
-         "requires" : {
-            "Module::Build" : "0.3601"
-         }
-      },
       "configure" : {
          "requires" : {
-            "Module::Build" : "0.3601"
+            "ExtUtils::MakeMaker" : "6.30"
          }
       },
       "runtime" : {
          "requires" : {
             "AnyEvent::Curl::Multi" : 0,
-            "ElasticSearch" : "0.44",
-            "ElasticSearch::Transport::AEHTTP" : "0.02",
+            "ElasticSearch" : "0.48",
+            "ElasticSearch::Transport::AEHTTP" : "0.03",
             "ElasticSearch::Util" : 0,
             "Encode" : 0,
             "Guard" : 0,
@@ -57,6 +52,6 @@
          "web" : "https://github.com/clintongormley/ElasticSearch-AECurl"
       }
    },
-   "version" : "0.02"
+   "version" : "0.03"
 }
 

@@ -3,8 +3,8 @@ package ElasticSearch::Transport::AECurl;
 use strict;
 use warnings;
 
-use ElasticSearch 0.44                    ();
-use ElasticSearch::Transport::AEHTTP 0.02 ();
+use ElasticSearch 0.48                    ();
+use ElasticSearch::Transport::AEHTTP 0.03 ();
 use parent 'ElasticSearch::Transport::AEHTTP';
 use AnyEvent::Curl::Multi();
 use HTTP::Request();
@@ -13,7 +13,7 @@ use ElasticSearch::Util qw(build_error);
 use Scalar::Util qw(weaken);
 use Guard qw(guard);
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 #===================================
 sub init {
@@ -54,10 +54,10 @@ sub _send_request {
             $code = $response->code;
         }
 
-        my $type
-            = $code eq '409' ? 'Conflict'
-            : $code eq '404' ? 'Missing'
-            : $msg =~ /Operation timed out/ ? 'Timeout'
+        my $type = $self->code_to_error($code)
+            || (
+            $msg =~ /Operation timed out/
+            ? 'Timeout'
             : $msg =~ /  couldn't.connect
                        | connect.*time
                        | send.failure
@@ -66,7 +66,8 @@ sub _send_request {
                        | Upload.failed
                       /xi
             ? 'Connection'
-            : 'Request';
+            : 'Request'
+            );
 
         my $error_params = {
             server      => $server,
@@ -168,7 +169,7 @@ ElasticSearch::Transport::AECurl - AnyEvent::Multi::Curl (libcurl) backend for E
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 
@@ -302,7 +303,7 @@ Clinton Gormley <drtech@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Clinton Gormley.
+This software is copyright (c) 2012 by Clinton Gormley.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
