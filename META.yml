@@ -15,8 +15,8 @@ meta-spec:
 name: ElasticSearch-Transport-AECurl
 requires:
   AnyEvent::Curl::Multi: 0
-  ElasticSearch: 0.48
-  ElasticSearch::Transport::AEHTTP: 0.03
+  ElasticSearch: 0.50
+  ElasticSearch::Transport::AEHTTP: 0.04
   ElasticSearch::Util: 0
   Encode: 0
   Guard: 0
@@ -29,4 +29,4 @@ resources:
   bugtracker: https://github.com/clintongormley/ElasticSearch-AECurl/issues
   homepage: https://metacpan.org/module/ElasticSearch
   repository: git://github.com/clintongormley/ElasticSearch-AECurl.git
-version: 0.03
+version: 0.04

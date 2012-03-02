@@ -3,8 +3,8 @@ package ElasticSearch::Transport::AECurl;
 use strict;
 use warnings;
 
-use ElasticSearch 0.48                    ();
-use ElasticSearch::Transport::AEHTTP 0.03 ();
+use ElasticSearch 0.50                    ();
+use ElasticSearch::Transport::AEHTTP 0.04 ();
 use parent 'ElasticSearch::Transport::AEHTTP';
 use AnyEvent::Curl::Multi();
 use HTTP::Request();
@@ -13,7 +13,7 @@ use ElasticSearch::Util qw(build_error);
 use Scalar::Util qw(weaken);
 use Guard qw(guard);
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 #===================================
 sub init {
@@ -169,7 +169,7 @@ ElasticSearch::Transport::AECurl - AnyEvent::Multi::Curl (libcurl) backend for E
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 SYNOPSIS
 

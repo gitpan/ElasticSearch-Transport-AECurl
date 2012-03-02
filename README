@@ -3,7 +3,7 @@ NAME
     backend for ElasticSearch
 
 VERSION
-    version 0.03
+    version 0.04
 
 SYNOPSIS
         use ElasticSearch;

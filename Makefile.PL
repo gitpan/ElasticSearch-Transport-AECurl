@@ -23,8 +23,8 @@ my %WriteMakefileArgs = (
   "NAME" => "ElasticSearch::Transport::AECurl",
   "PREREQ_PM" => {
     "AnyEvent::Curl::Multi" => 0,
-    "ElasticSearch" => "0.48",
-    "ElasticSearch::Transport::AEHTTP" => "0.03",
+    "ElasticSearch" => "0.50",
+    "ElasticSearch::Transport::AEHTTP" => "0.04",
     "ElasticSearch::Util" => 0,
     "Encode" => 0,
     "Guard" => 0,
@@ -34,7 +34,7 @@ my %WriteMakefileArgs = (
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.03",
+  "VERSION" => "0.04",
   "test" => {
     "TESTS" => "t/*.t"
   }
