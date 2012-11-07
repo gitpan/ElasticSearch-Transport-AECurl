@@ -12,7 +12,10 @@ my %WriteMakefileArgs = (
   "ABSTRACT" => "AnyEvent::Multi::Curl (libcurl) backend for ElasticSearch",
   "AUTHOR" => "Clinton Gormley <drtech\@cpan.org>",
   "BUILD_REQUIRES" => {
-    "Test::More" => 0
+    "ElasticSearch::SearchBuilder" => 0,
+    "Test::Differences" => 0,
+    "Test::Exception" => 0,
+    "Test::More" => "0.96"
   },
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.30"
@@ -23,8 +26,8 @@ my %WriteMakefileArgs = (
   "NAME" => "ElasticSearch::Transport::AECurl",
   "PREREQ_PM" => {
     "AnyEvent::Curl::Multi" => 0,
-    "ElasticSearch" => "0.50",
-    "ElasticSearch::Transport::AEHTTP" => "0.04",
+    "ElasticSearch" => "0.60",
+    "ElasticSearch::Transport::AEHTTP" => "0.05",
     "ElasticSearch::Util" => 0,
     "Encode" => 0,
     "Guard" => 0,
@@ -34,7 +37,7 @@ my %WriteMakefileArgs = (
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.04",
+  "VERSION" => "0.05",
   "test" => {
     "TESTS" => "t/*.t"
   }
