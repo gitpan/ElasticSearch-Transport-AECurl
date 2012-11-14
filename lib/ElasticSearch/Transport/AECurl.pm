@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 use ElasticSearch 0.60                    ();
-use ElasticSearch::Transport::AEHTTP 0.05 ();
+use ElasticSearch::Transport::AEHTTP 0.06 ();
 use parent 'ElasticSearch::Transport::AEHTTP';
 use AnyEvent::Curl::Multi();
 use HTTP::Request();
@@ -13,7 +13,7 @@ use ElasticSearch::Util qw(build_error);
 use Scalar::Util qw(weaken);
 use Guard qw(guard);
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 #===================================
 sub init {
@@ -171,7 +171,7 @@ ElasticSearch::Transport::AECurl - AnyEvent::Multi::Curl (libcurl) backend for E
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 SYNOPSIS
 
